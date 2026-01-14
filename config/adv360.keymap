@@ -27,11 +27,11 @@
         default_layer {
             display-name = "Base";
             bindings = <
-&kp EQUAL  &kp N1          &kp N2        &kp N3    &kp N4     &kp N5  &tog 1                                                                                     &mo 3                &kp N6  &kp N7  &kp N8     &kp N9    &kp N0    &kp MINUS
-&kp TAB    &kp Q           &kp W         &kp E     &kp R      &kp T   &kp LG(LEFT_ARROW)                                                                         &kp LG(RIGHT_ARROW)  &kp Y   &kp U   &kp I      &kp O     &kp P     &kp BSLH
-&kp ESC    &kp A           &kp S         &kp D     &lt 4 F    &kp G   &kp LG(C)           &kp LCTRL                &kp LALT      &mt RCTRL LG(SPACE)  &kp LCMD   &kp LG(V)            &kp H   &kp J   &kp K      &kp L     &kp SEMI  &kp SQT
-&kp LSHFT  &kp Z           &kp X         &kp C     &kp V      &kp B                                                &kp HOME      &kp PG_UP                                            &kp N   &kp M   &kp COMMA  &kp DOT   &kp FSLH  &kp RSHFT
-&mo 2      &mt LGUI GRAVE  &kp CAPSLOCK  &kp LEFT  &kp RIGHT          &kp BSPC            &mt LS(LC(LCMD)) DELETE  &kp END       &kp PG_DN            &kp ENTER  &kp SPACE                    &kp UP  &kp DOWN   &kp LBKT  &kp RBKT  &mo 2
+&kp EQUAL  &kp N1       &kp N2        &kp N3        &kp N4     &kp N5   &tog 1                                                                                     &mo 3                &kp N6  &kp N7   &kp N8             &kp N9      &kp N0          &kp MINUS
+&kp TAB    &kp Q        &kp W         &kp E         &kp R      &kp T    &kp LG(LEFT_ARROW)                                                                         &kp LG(RIGHT_ARROW)  &kp Y   &kp U    &kp I              &kp O       &kp P           &kp BSLH
+&kp ESC    &hm LCTRL A  &hm LGUI S    &hm LSHIFT D  &lt 4 F    &lt 1 G  &kp LG(C)           &kp LCTRL                &kp LALT      &mt RCTRL LG(SPACE)  &kp LCMD   &kp LG(V)            &kp H   &lt 1 J  &hm RIGHT_SHIFT K  &hm RGUI L  &hm RCTRL SEMI  &kp SQT
+&kp LSHFT  &kp Z        &kp X         &kp C         &kp V      &kp B                                                 &kp HOME      &kp PG_UP                                            &kp N   &kp M    &kp COMMA          &kp DOT     &kp FSLH        &kp RSHFT
+&mo 2      &kp GRAVE    &kp CAPSLOCK  &kp LEFT      &kp RIGHT           &kp BSPC            &mt LS(LC(LCMD)) DELETE  &kp END       &kp PG_DN            &kp ENTER  &kp SPACE                    &kp UP   &kp DOWN           &kp LBKT    &kp RBKT        &mo 2
             >;
         };
 
@@ -70,11 +70,11 @@
 
         Arrow {
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans  &trans                                      &trans  &trans  &trans          &trans          &trans           &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans                                      &trans  &trans  &trans          &kp UP_ARROW    &trans           &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans                  &trans      &trans                  &trans  &trans          &trans          &trans           &trans  &trans
-&trans  &trans  &trans  &trans  &trans          &trans  &trans  &trans      &trans  &trans  &trans          &trans          &trans          &trans           &trans  &trans
+&trans  &trans  &trans      &trans  &trans  &trans  &trans                                               &trans       &trans  &trans          &trans           &trans            &trans             &trans
+&trans  &trans  &caps_word  &trans  &trans  &trans  &trans                                               &trans       &trans  &trans          &kp UP_ARROW     &trans            &trans             &trans
+&trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans      &trans  &kp LG(Q)        &trans       &trans  &kp LEFT_ARROW  &kp DOWN_ARROW   &kp RIGHT_ARROW   &trans             &trans
+&trans  &trans  &trans      &trans  &trans  &trans                  &trans      &trans                                &trans  &kp LEFT_BRACE  &kp RIGHT_BRACE  &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &trans
+&trans  &trans  &trans      &trans  &trans          &trans  &trans  &trans      &trans  &kp LG(LS(TAB))  &kp LG(TAB)          &trans          &trans           &trans            &trans             &trans
             >;
         };
     };
