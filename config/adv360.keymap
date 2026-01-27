@@ -14,10 +14,47 @@
             compatible = "zmk,behavior-hold-tap";
             label = "HOMEROW_MODS";
             #binding-cells = <2>;
-            tapping-term-ms = <200>;
-            quick_tap_ms = <175>;
+            tapping-term-ms = <250>;
+            quick_tap_ms = <200>;
             flavor = "tap-preferred";
             bindings = <&kp>, <&kp>;
+        };
+
+        tap_dance: tap_dance {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TAP_DANCE";
+            #binding-cells = <0>;
+            bindings = <&none>, <&none>;
+
+            tapping-term-ms = <150>;
+        };
+
+        mod_morph: mod_morph {
+            compatible = "zmk,behavior-mod-morph";
+            label = "MOD_MORPH";
+            bindings = <&none>, <&none>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT)>;
+        };
+    };
+
+    combos {
+        compatible = "zmk,combos";
+
+        activate-symbol {
+            bindings = <&to 1>;
+            key-positions = <32 31>;
+        };
+
+        base-layer {
+            bindings = <&to 0>;
+            key-positions = <32 29>;
+        };
+
+        symbol-key-layer {
+            bindings = <&to 0>;
+            key-positions = <30 32>;
         };
     };
 
@@ -27,11 +64,11 @@
         default_layer {
             display-name = "Base";
             bindings = <
-&kp EQUAL  &kp N1       &kp N2        &kp N3        &kp N4     &kp N5   &tog 1                                                                                     &mo 3                &kp N6  &kp N7   &kp N8             &kp N9      &kp N0          &kp MINUS
-&kp TAB    &kp Q        &kp W         &kp E         &kp R      &kp T    &kp LG(LEFT_ARROW)                                                                         &kp LG(RIGHT_ARROW)  &kp Y   &kp U    &kp I              &kp O       &kp P           &kp BSLH
-&kp ESC    &hm LCTRL A  &hm LGUI S    &hm LSHIFT D  &lt 4 F    &lt 1 G  &kp LG(C)           &kp LCTRL                &kp LALT      &mt RCTRL LG(SPACE)  &kp LCMD   &kp LG(V)            &kp H   &lt 1 J  &hm RIGHT_SHIFT K  &hm RGUI L  &hm RCTRL SEMI  &kp SQT
-&kp LSHFT  &kp Z        &kp X         &kp C         &kp V      &kp B                                                 &kp HOME      &kp PG_UP                                            &kp N   &kp M    &kp COMMA          &kp DOT     &kp FSLH        &kp RSHFT
-&mo 2      &kp GRAVE    &kp CAPSLOCK  &kp LEFT      &kp RIGHT           &kp BSPC            &mt LS(LC(LCMD)) DELETE  &kp END       &kp PG_DN            &kp ENTER  &kp SPACE                    &kp UP   &kp DOWN           &kp LBKT    &kp RBKT        &mo 2
+&kp EQUAL  &kp N1       &kp N2        &kp N3        &kp N4     &kp N5   &tog 1                                                                &mo 3                &kp N6  &kp N7   &kp N8             &kp N9      &kp N0          &kp MINUS
+&kp TAB    &kp Q        &kp W         &kp E         &kp R      &kp T    &kp LG(C)                                                             &kp LG(RIGHT_ARROW)  &kp Y   &kp U    &kp I              &kp O       &kp P           &kp BSLH
+&kp ESC    &hm LCTRL A  &hm LGUI S    &hm LSHIFT D  &lt 0 F    &lt 1 G  &kp LG(V)  &kp LCTRL   &kp LALT       &mt RCTRL LG(SPACE)  &kp LCMD   &kp LG(V)            &kp H   &lt 1 J  &hm RIGHT_SHIFT K  &hm RGUI L  &hm RCTRL SEMI  &kp SQT
+&kp LSHFT  &kp Z        &kp X         &kp C         &kp V      &kp B                           &kp HOME       &kp PG_UP                                            &kp N   &kp M    &kp COMMA          &kp DOT     &kp FSLH        &kp RSHFT
+&mo 2      &kp GRAVE    &kp CAPSLOCK  &kp LEFT      &kp RIGHT           &kp BSPC   &kp DELETE  &lt 2 END      &lt 2 PAGE_DOWN      &kp ENTER  &kp SPACE                    &kp UP   &kp DOWN           &kp LBKT    &kp RBKT        &mo 2
             >;
         };
 
@@ -40,7 +77,7 @@
             bindings = <
 &kp EQUAL  &kp N1     &kp N2    &kp N3    &kp N4     &kp N5  &trans                                                   &mo 3      &kp N6  &kp KP_NUM  &kp KP_EQUAL  &kp KP_DIVIDE  &kp KP_MULTIPLY  &kp MINUS
 &kp TAB    &kp Q      &kp W     &kp E     &kp R      &kp T   &none                                                    &none      &kp Y   &kp KP_N7   &kp KP_N8     &kp KP_N9      &kp KP_MINUS     &kp BSLH
-&kp ESC    &kp A      &kp S     &kp D     &kp F      &kp G   &none     &kp LCTRL  &kp LALT      &kp LGUI   &kp RCTRL  &none      &kp H   &kp KP_N4   &kp KP_N5     &kp KP_N6      &kp KP_PLUS      &kp SQT
+&kp ESC    &kp A      &kp S     &kp D     &kp F      &kp G   &none     &kp ENTER  &kp LALT      &kp LGUI   &kp RCTRL  &none      &kp H   &kp KP_N4   &kp KP_N5     &kp KP_N6      &kp KP_PLUS      &kp SQT
 &kp LSHFT  &kp Z      &kp X     &kp C     &kp V      &kp B                        &kp HOME      &kp PG_UP                        &kp N   &kp KP_N1   &kp KP_N2     &kp KP_N3      &kp KP_ENTER     &kp RSHFT
 &mo 2      &kp GRAVE  &kp CAPS  &kp LEFT  &kp RIGHT          &kp BSPC  &kp DEL    &kp END       &kp PG_DN  &kp ENTER  &kp KP_N0          &kp UP      &kp DOWN      &kp KP_DOT     &kp RBKT         &mo 2
             >;
@@ -49,32 +86,22 @@
         fn {
             display-name = "Fn";
             bindings = <
-&kp F1  &kp F2  &kp F3  &kp F4  &kp F5  &kp F6  &tog 1                                      &mo 3   &kp F7  &kp F8  &kp F9  &kp F10  &kp F11  &kp F12
-&trans  &trans  &trans  &trans  &trans  &trans  &none                                       &none   &trans  &trans  &trans  &trans   &trans   &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &none   &trans  &trans      &trans  &trans  &none   &trans  &trans  &trans  &trans   &trans   &trans
-&trans  &trans  &trans  &trans  &trans  &trans                  &trans      &trans                  &trans  &trans  &trans  &trans   &trans   &trans
-&trans  &trans  &trans  &trans  &trans          &trans  &trans  &trans      &trans  &trans  &trans          &trans  &trans  &trans   &trans   &trans
+&kp F1  &kp F2            &kp F3             &kp F4            &kp F5           &kp F6     &tog 1                                      &mo 3   &kp F7        &kp F8                &kp F9                 &kp F10    &kp F11        &kp F12
+&trans  &trans            &kp LESS_THAN      &kp GREATER_THAN  &trans           &trans     &none                                       &none   &kp PIPE      &kp PLUS              &kp UNDERSCORE         &kp SLASH  &trans         &trans
+&trans  &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp LEFT_BRACE    &kp RIGHT_BRACE  &kp EQUAL  &none   &trans  &trans      &trans  &trans  &none   &kp QUESTION  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp COLON  &kp SEMICOLON  &trans
+&trans  &kp HASH          &kp DOLLAR         &kp AT_SIGN       &kp GRAVE        &trans                     &trans      &trans                  &trans        &kp MINUS             &trans                 &trans     &trans         &trans
+&trans  &trans            &trans             &trans            &trans                      &trans  &trans  &trans      &trans  &trans  &trans                &trans                &trans                 &trans     &trans         &trans
             >;
         };
 
         mod {
             display-name = "Mod";
             bindings = <
-&none           &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4  &none                                                  &trans           &none  &none       &none       &none  &none  &none
-&none           &none         &none         &none         &none         &none         &bootloader                                            &bootloader      &none  &none       &none       &none  &none  &none
-&studio_unlock  &none         &none         &none         &none         &none         &none        &none  &none      &bt BT_CLR  &none       &stp STP_BAT     &none  &none       &none       &none  &none  &none
-&none           &none         &none         &none         &macro_ver    &none                             &none      &none                                    &none  &none       &none       &none  &none  &none
-&none           &none         &none         &none         &none                       &none        &none  &none      &none       &bl BL_TOG  &rgb_ug RGB_TOG         &bl BL_INC  &bl BL_DEC  &none  &none  &none
-            >;
-        };
-
-        Arrow {
-            bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans  &trans                                                   &trans   &trans     &trans          &trans           &trans            &trans             &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans                                                   &trans   &trans     &trans          &kp UP_ARROW     &trans            &trans             &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans      &trans  &kp LG(Q)        &trans   &kt LGUI   &kp LEFT_ARROW  &kp DOWN_ARROW   &kp RIGHT_ARROW   &trans             &trans
-&trans  &trans  &trans  &trans  &trans  &trans                      &trans      &trans                            &kt LSHFT  &kp LEFT_BRACE  &kp RIGHT_BRACE  &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &trans
-&trans  &trans  &trans  &trans  &trans          &caps_word  &trans  &trans      &trans  &kp LG(LS(TAB))  &kp TAB             &trans          &trans           &trans            &trans             &trans
+&none           &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4  &none                                                  &trans           &studio_unlock  &none       &none       &none  &none  &none
+&none           &none         &none         &none         &none         &none         &bootloader                                            &bootloader      &none           &none       &none       &none  &none  &none
+&studio_unlock  &none         &none         &none         &none         &none         &none        &none  &none      &bt BT_CLR  &none       &stp STP_BAT     &none           &none       &none       &none  &none  &none
+&none           &none         &none         &none         &macro_ver    &none                             &none      &none                                    &none           &none       &none       &none  &none  &none
+&none           &none         &none         &none         &none                       &none        &none  &none      &none       &bl BL_TOG  &rgb_ug RGB_TOG                  &bl BL_INC  &bl BL_DEC  &none  &none  &none
             >;
         };
     };
