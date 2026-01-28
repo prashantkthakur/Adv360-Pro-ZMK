@@ -27,7 +27,7 @@
             compatible = "zmk,behavior-tap-dance";
             label = "TAP_DANCE";
             #binding-cells = <0>;
-            bindings = <&to 1>, <&to 2>, <&to 4>, <&to 3>;
+            bindings = <&to 1>, <&to 2>, <&to 3>, <&to 0>;
 
             tapping-term-ms = <150>;
         };
@@ -67,43 +67,33 @@
         default_layer {
             display-name = "Base";
             bindings = <
-&kp EQUAL  &kp N1       &kp N2        &kp N3        &kp N4     &kp N5   &tog 1                                                                &mo 4                &kp N6  &kp N7   &kp N8             &kp N9      &kp N0          &kp MINUS
+&kp EQUAL  &kp N1       &kp N2        &kp N3        &kp N4     &kp N5   &tog 1                                                                &mo 3                &kp N6  &kp N7   &kp N8             &kp N9      &kp N0          &kp MINUS
 &kp TAB    &kp Q        &kp W         &kp E         &kp R      &kp T    &kp LG(C)                                                             &kp LG(RIGHT_ARROW)  &kp Y   &kp U    &kp I              &kp O       &kp P           &kp BSLH
-&kp ESC    &hm LCTRL A  &hm LGUI S    &hm LSHIFT D  &lt 3 F    &lt 1 G  &kp LG(V)  &kp LCTRL   &kp LALT       &mt RCTRL LG(SPACE)  &kp LCMD   &kp LG(V)            &kp H   &lt 4 J  &hm RIGHT_SHIFT K  &hm RGUI L  &hm RCTRL SEMI  &kp SQT
+&kp ESC    &hm LCTRL A  &hm LGUI S    &hm LSHIFT D  &lt 1 F    &lt 1 G  &kp LG(V)  &kp LCTRL   &kp LALT       &mt RCTRL LG(SPACE)  &kp LCMD   &kp LG(V)            &kp H   &lt 3 J  &hm RIGHT_SHIFT K  &hm RGUI L  &hm RCTRL SEMI  &kp SQT
 &kp LSHFT  &kp Z        &kp X         &kp C         &kp V      &kp B                           &kp HOME       &kp PG_UP                                            &kp N   &kp M    &kp COMMA          &kp DOT     &kp FSLH        &kp RSHFT
-&mo 2      &kp GRAVE    &kp CAPSLOCK  &kp LEFT      &kp RIGHT           &kp BSPC   &kp DELETE  &lt 2 END      &lt 2 PAGE_DOWN      &kp ENTER  &kp SPACE                    &kp UP   &kp DOWN           &kp LBKT    &kp RBKT        &tap_dance
+&mo 2      &kp GRAVE    &kp CAPSLOCK  &kp LEFT      &kp RIGHT           &kp BSPC   &kp DELETE  &lt 1 END      &lt 1 PAGE_DOWN      &kp ENTER  &kp SPACE                    &kp UP   &kp DOWN           &kp LBKT    &kp RBKT        &tap_dance
             >;
         };
 
         keypad {
             display-name = "Kp";
             bindings = <
-&kp EQUAL  &kp N1     &kp N2    &kp N3    &kp N4     &kp N5  &trans                                                   &mo 4      &kp N6  &kp KP_NUM  &kp KP_EQUAL  &kp KP_DIVIDE  &kp KP_MULTIPLY  &kp MINUS
-&kp TAB    &kp Q      &kp W     &kp E     &kp R      &kp T   &none                                                    &none      &kp Y   &kp KP_N7   &kp KP_N8     &kp KP_N9      &kp KP_MINUS     &kp BSLH
-&kp ESC    &kp A      &kp S     &kp D     &kp F      &kp G   &none     &kp ENTER  &kp LALT      &kp LGUI   &kp RCTRL  &none      &kp H   &kp KP_N4   &kp KP_N5     &kp KP_N6      &kp KP_PLUS      &kp SQT
-&kp LSHFT  &kp Z      &kp X     &kp C     &kp V      &kp B                        &kp HOME      &kp PG_UP                        &kp N   &kp KP_N1   &kp KP_N2     &kp KP_N3      &kp KP_ENTER     &kp RSHFT
-&mo 2      &kp GRAVE  &kp CAPS  &kp LEFT  &kp RIGHT          &kp BSPC  &kp DEL    &kp END       &kp PG_DN  &kp ENTER  &kp KP_N0          &kp UP      &kp DOWN      &kp KP_DOT     &kp RBKT         &mo 2
+&kp EQUAL  &kp EXCLAMATION   &kp AT_SIGN     &kp HASH         &kp DOLLAR         &kp PERCENT  &trans                                                   &mo 3      &kp N6         &kp KP_NUM  &kp KP_EQUAL  &kp KP_DIVIDE  &kp KP_MULTIPLY  &kp MINUS
+&kp TAB    &kp QUESTION      &kp MINUS       &kp EQUAL        &kp UNDERSCORE     &kp T        &none                                                    &none      &kp Y          &kp KP_N7   &kp KP_N8     &kp KP_N9      &kp KP_MINUS     &kp BSLH
+&kp GRAVE  &kp LEFT_BRACKET  &kp LEFT_BRACE  &kp RIGHT_BRACE  &kp RIGHT_BRACKET  &kp COLON    &none     &kp ENTER  &kp LALT      &kp LGUI   &kp RCTRL  &none      &kp SEMICOLON  &kp KP_N4   &kp KP_N5     &kp KP_N6      &kp KP_PLUS      &kp SQT
+&kp LSHFT  &kp AMPERSAND     &kp PLUS        &kp LESS_THAN    &kp GREATER_THAN   &kp SLASH                         &kp HOME      &kp PG_UP                        &kp N          &kp KP_N1   &kp KP_N2     &kp KP_N3      &kp KP_ENTER     &kp RSHFT
+&mo 2      &kp GRAVE         &kp CAPS        &kp LEFT         &kp RIGHT                       &kp BSPC  &kp DEL    &kp END       &kp PG_DN  &kp ENTER  &kp KP_N0                 &kp UP      &kp DOWN      &kp KP_DOT     &kp RBKT         &mo 2
             >;
         };
 
         fn {
             display-name = "Fn";
             bindings = <
-&kp F1  &kp F2            &kp F3             &kp F4            &kp F5           &kp F6     &tog 1                                                          &mo 4   &kp F7        &kp F8                &kp F9                 &kp F10    &kp F11        &kp F12
+&kp F1  &kp F2            &kp F3             &kp F4            &kp F5           &kp F6     &tog 1                                                          &mo 3   &kp F7        &kp F8                &kp F9                 &kp F10    &kp F11        &kp F12
 &trans  &trans            &kp LESS_THAN      &kp GREATER_THAN  &trans           &trans     &none                                                           &none   &kp PIPE      &kp PLUS              &kp UNDERSCORE         &kp SLASH  &none          &kp C_VOL_UP
 &trans  &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp LEFT_BRACE    &kp RIGHT_BRACE  &kp EQUAL  &none   &trans            &trans      &trans  &trans            &none   &kp QUESTION  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp COLON  &kp SEMICOLON  &kp C_VOL_DN
 &trans  &kp HASH          &kp DOLLAR         &kp AT_SIGN       &kp GRAVE        &trans                               &trans      &trans                            &trans        &kp MINUS             &trans                 &trans     &trans         &kp K_MUTE
 &trans  &trans            &trans             &trans            &trans                      &trans  &kp C_PLAY_PAUSE  &trans      &trans  &kp C_PLAY_PAUSE  &trans                &trans                &trans                 &trans     &trans         &trans
-            >;
-        };
-
-        System_control {
-            bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans  &trans                                      &trans  &trans  &trans          &trans          &trans           &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans                                      &trans  &trans  &trans          &kp UP_ARROW    &trans           &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans                  &trans      &trans                  &trans  &mkp LCLK       &mkp RCLK       &mkp MB4         &trans  &trans
-&trans  &trans  &trans  &trans  &trans          &trans  &trans  &trans      &trans  &trans  &trans          &trans          &trans          &trans           &trans  &trans
             >;
         };
 
