@@ -60,7 +60,7 @@
             bindings = <
 &kp EQUAL  &kp N1       &kp N2        &kp N3        &kp N4     &kp N5   &tog 1                                                                &mo 3                     &kp N6   &kp N7   &kp N8             &kp N9      &kp N0          &kp MINUS
 &kp TAB    &kp Q        &kp W         &kp E         &kp R      &kp T    &kp LG(C)                                                             &kp LG(LS(NUMBER_3))      &kp Y    &kp U    &kp I              &kp O       &kp P           &kp BSLH
-&kp ESC    &hm LCTRL A  &hm LGUI S    &hm LSHIFT D  &lt 2 F    &lt 1 G  &kp LG(V)  &kp LCTRL   &kp LALT       &mt RCTRL LG(SPACE)  &kp LCMD   &kp LS(LG(LC(NUMBER_4)))  &lt 3 H  &lt 4 J  &hm RIGHT_SHIFT K  &hm RGUI L  &hm RCTRL SEMI  &kp SQT
+&kp ESC    &hm LCTRL A  &hm LGUI S    &hm LSHIFT D  &lt 2 F    &lt 1 G  &kp LG(V)  &kp LCTRL   &kp LALT       &mt RCTRL LG(SPACE)  &kp LCMD   &kp LS(LG(LC(NUMBER_4)))  &lt 3 H  &lt 4 J  &hm RIGHT_SHIFT K  &hm RGUI L  &hm RCTRL SEMI  &hm LALT SQT
 &kp LSHFT  &kp Z        &kp X         &kp C         &kp V      &kp B                           &kp HOME       &kp PG_UP                                                 &kp N    &kp M    &kp COMMA          &kp DOT     &kp FSLH        &kp RSHFT
 &mo 2      &kp GRAVE    &kp CAPSLOCK  &kp LEFT      &kp RIGHT           &kp BSPC   &kp DELETE  &lt 1 END      &lt 1 PAGE_DOWN      &kp ENTER  &kp SPACE                          &kp UP   &kp DOWN           &kp LBKT    &kp RBKT        &tap_dance
             >;
