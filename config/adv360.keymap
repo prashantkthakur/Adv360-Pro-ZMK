@@ -33,7 +33,15 @@
         };
     };
 
-    combos { compatible = "zmk,combos"; };
+    combos {
+        compatible = "zmk,combos";
+
+        esc {
+            bindings = <&kp ESCAPE>;
+            key-positions = <32 41>;
+            layers = <0>;
+        };
+    };
 
     macros {
         cmd_tab_sticky: cmd_tab_sticky {
@@ -67,22 +75,22 @@
 
         symbol {
             bindings = <
-&kp GRAVE  &kp EXCLAMATION    &kp AT_SIGN      &kp HASH               &kp DOLLAR     &kp PERCENT       &trans                                                                            &trans        &trans  &trans  &trans  &trans  &trans  &trans
-&trans     &kp AMPERSAND      &kp PLUS         &kp EQUAL              &kp MINUS      &kp UNDERSCORE    &trans                                                                            &trans        &trans  &trans  &trans  &trans  &trans  &trans
-&kp PIPE   &kp LEFT_BRACKET   &kp LEFT_BRACE   &kp LEFT_PARENTHESIS   &kp SEMICOLON  &kp LESS_THAN     &trans             &trans     &trans                    &trans        &trans      &trans        &trans  &trans  &trans  &trans  &trans  &trans
-&trans     &kp RIGHT_BRACKET  &kp RIGHT_BRACE  &kp RIGHT_PARENTHESIS  &kp COLON      &kp GREATER_THAN                                &kp CARET                 &kp ASTERISK                            &trans  &trans  &trans  &trans  &trans  &trans
-&trans     &trans             &trans           &trans                 &trans                           &kp DOUBLE_QUOTES  &kp COMMA  &kp NON_US_BACKSLASH      &kp SLASH     &kp PERIOD  &kp QUESTION          &trans  &trans  &trans  &trans  &trans
+&kp GRAVE  &kp EXCLAMATION    &kp AT_SIGN      &kp HASH               &kp DOLLAR     &kp PERCENT       &trans                                                                           &trans   &trans  &trans  &trans     &trans      &trans        &trans
+&trans     &kp AMPERSAND      &kp PLUS         &kp EQUAL              &kp MINUS      &kp UNDERSCORE    &trans                                                                           &trans   &trans  &trans  &trans     &trans      &trans        &trans
+&kp PIPE   &kp LEFT_BRACKET   &kp LEFT_BRACE   &kp LEFT_PARENTHESIS   &kp SEMICOLON  &kp LESS_THAN     &trans             &trans        &trans                    &trans     &trans     &trans   &trans  &trans  &kp COMMA  &kp PERIOD  &kp QUESTION  &trans
+&trans     &kp RIGHT_BRACKET  &kp RIGHT_BRACE  &kp RIGHT_PARENTHESIS  &kp COLON      &kp GREATER_THAN                                   &trans                    &trans                         &trans  &trans  &trans     &trans      &trans        &trans
+&trans     &trans             &trans           &trans                 &trans                           &kp DOUBLE_QUOTES  &kp ASTERISK  &kp NON_US_BACKSLASH      &kp SLASH  &kp CARET  &kp SQT          &trans  &trans     &trans      &trans        &trans
             >;
         };
 
         fn {
             display-name = "Fn";
             bindings = <
-&kp F1  &kp F2  &kp F3  &kp F4  &kp F5  &kp F6  &tog 0                                                               &mo 4    &kp F7  &kp F8      &kp F9           &kp F10            &kp F11     &kp F12
-&trans  &trans  &trans  &trans  &trans  &trans  &none                                                                &none    &trans  &trans      &kp UP_ARROW     &trans             &trans      &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &none        &trans            &trans      &trans  &trans            &none    &trans  &kp LEFT    &kp DOWN_ARROW   &kp RIGHT_ARROW    &kp K_NEXT  &kp K_PREV
-&trans  &trans  &trans  &trans  &trans  &trans                                 &trans      &trans                             &trans  &kp K_MUTE  &kp C_VOLUME_UP  &kp C_VOLUME_DOWN  &trans      &trans
-&trans  &trans  &trans  &trans  &trans          &kp LS(TAB)  &kp C_PLAY_PAUSE  &trans      &trans  &kp C_PLAY_PAUSE  &kp TAB          &trans      &trans           &trans             &trans      &kp LG(LS(Q))
+&kp F1  &kp F2  &kp F3  &kp F4  &kp F5  &kp F6  &tog 0                                                               &mo 4    &kp F7      &kp F8      &kp F9           &kp F10            &kp F11     &kp F12
+&trans  &trans  &trans  &trans  &trans  &trans  &none                                                                &none    &trans      &trans      &kp UP_ARROW     &trans             &trans      &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &none        &trans            &trans      &trans  &trans            &none    &caps_word  &kp LEFT    &kp DOWN_ARROW   &kp RIGHT_ARROW    &kp K_NEXT  &kp K_PREV
+&trans  &trans  &trans  &trans  &trans  &trans                                 &trans      &trans                             &trans      &kp K_MUTE  &kp C_VOLUME_UP  &kp C_VOLUME_DOWN  &trans      &trans
+&trans  &trans  &trans  &trans  &trans          &kp LS(TAB)  &kp C_PLAY_PAUSE  &trans      &trans  &kp C_PLAY_PAUSE  &kp TAB              &trans      &trans           &trans             &trans      &kp LG(LS(Q))
             >;
         };
 
@@ -110,11 +118,11 @@
 
         CommandLayer {
             bindings = <
-&trans  &trans            &trans             &trans  &trans         &trans     &trans                                      &trans  &trans  &trans          &trans           &trans  &trans  &trans
-&trans  &trans            &trans             &trans  &trans         &trans     &trans                                      &trans  &trans  &trans          &trans           &trans  &trans  &trans
-&trans  &kp LG(LA(LEFT))  &kp LG(LA(RIGHT))  &trans  &kp LG(GRAVE)  &kp LS(T)  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &cmd_shift_tab  &cmd_tab_sticky  &trans  &trans  &trans
-&trans  &trans            &trans             &trans  &trans         &trans                     &trans      &trans                  &trans  &trans          &trans           &trans  &trans  &trans
-&trans  &trans            &trans             &trans  &trans                    &trans  &trans  &trans      &trans  &trans  &trans          &trans          &trans           &trans  &trans  &trans
+&trans  &trans            &trans             &trans         &trans  &trans  &trans                                              &trans           &trans  &trans          &trans           &trans  &trans  &trans
+&trans  &trans            &trans             &trans         &trans  &trans  &trans                                              &trans           &trans  &trans          &trans           &trans  &trans  &trans
+&trans  &kp LG(LA(LEFT))  &kp LG(LA(RIGHT))  &kp LG(GRAVE)  &trans  &trans  &trans          &trans  &trans      &trans  &trans  &trans           &trans  &cmd_shift_tab  &cmd_tab_sticky  &trans  &trans  &trans
+&trans  &trans            &trans             &trans         &trans  &trans                          &trans      &trans                           &trans  &trans          &trans           &trans  &trans  &trans
+&trans  &trans            &trans             &trans         &trans          &cmd_shift_tab  &trans  &trans      &trans  &trans  &cmd_tab_sticky          &trans          &trans           &trans  &trans  &trans
             >;
         };
     };
