@@ -43,22 +43,6 @@
         };
     };
 
-    macros {
-        cmd_tab_sticky: cmd_tab_sticky {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&sk LGUI &kp TAB>;
-            label = "CMD_TAB_STICKY";
-        };
-
-        cmd_shift_tab: cmd_shift_tab {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&sk LGUI &kp LS(TAB)>;
-            label = "CMD_SHIFT_TAB";
-        };
-    };
-
     keymap {
         compatible = "zmk,keymap";
 
@@ -118,11 +102,11 @@
 
         CommandLayer {
             bindings = <
-&trans  &trans            &trans             &trans         &trans  &trans  &trans                                              &trans           &trans  &trans          &trans           &trans  &trans  &trans
-&trans  &trans            &trans             &trans         &trans  &trans  &trans                                              &trans           &trans  &trans          &trans           &trans  &trans  &trans
-&trans  &kp LG(LA(LEFT))  &kp LG(LA(RIGHT))  &kp LG(GRAVE)  &trans  &trans  &trans          &trans  &trans      &trans  &trans  &trans           &trans  &cmd_shift_tab  &cmd_tab_sticky  &trans  &trans  &trans
-&trans  &trans            &trans             &trans         &trans  &trans                          &trans      &trans                           &trans  &trans          &trans           &trans  &trans  &trans
-&trans  &trans            &trans             &trans         &trans          &cmd_shift_tab  &trans  &trans      &trans  &trans  &cmd_tab_sticky          &trans          &trans           &trans  &trans  &trans
+&trans  &trans            &trans             &trans         &trans  &trans  &trans                                                 &trans   &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans            &trans             &trans         &trans  &trans  &trans                                                 &trans   &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &kp LG(LA(LEFT))  &kp LG(LA(RIGHT))  &kp LG(GRAVE)  &trans  &trans  &trans       &trans  &trans            &trans  &trans  &trans   &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans            &trans             &trans         &trans  &trans                       &trans            &trans                   &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans            &trans             &trans         &trans          &kp LS(TAB)  &trans  &hm LGUI END      &trans  &trans  &kp TAB          &trans  &trans  &trans  &trans  &trans
             >;
         };
     };
