@@ -78,11 +78,11 @@
 
         CommandLayer {
             bindings = <
-&trans  &trans            &trans         &trans     &trans         &trans  &trans                                                      &trans                   &trans  &trans       &trans           &trans         &trans     &trans
-&trans  &trans            &trans         &trans     &trans         &trans  &trans                                                      &trans                   &trans  &trans       &trans           &trans         &kp LG(P)  &trans
-&trans  &kp LG(LA(LEFT))  &kp LS(LG(F))  &kp LC(C)  &kp LC(GRAVE)  &trans  &trans                  &trans  &trans      &trans  &trans  &trans                   &trans  &kp LG(TAB)  &kp LG(LS(TAB))  &kp LG(GRAVE)  &trans     &trans
-&trans  &trans            &trans         &trans     &trans         &trans                                  &trans      &trans                                   &trans  &trans       &trans           &trans         &trans     &trans
-&trans  &trans            &trans         &trans     &trans                 &kp LA(LG(LEFT_ARROW))  &trans  &trans      &trans  &trans  &kp LA(LG(RIGHT_ARROW))          &trans       &trans           &trans         &trans     &trans
+&trans  &trans            &trans         &trans     &trans         &trans  &trans                                                      &trans                   &trans    &trans   &trans           &trans         &trans     &trans
+&trans  &trans            &kp LG(W)      &trans     &trans         &trans  &trans                                                      &trans                   &trans    &trans   &trans           &trans         &kp LG(P)  &trans
+&trans  &kp LG(LA(LEFT))  &kp LS(LG(F))  &kp LC(C)  &kp LC(GRAVE)  &trans  &trans                  &trans  &trans      &trans  &trans  &trans                   &kt LGUI  &kt TAB  &kp LG(LS(TAB))  &kp LG(GRAVE)  &trans     &trans
+&trans  &trans            &trans         &trans     &trans         &trans                                  &trans      &trans                                   &trans    &trans   &trans           &trans         &trans     &trans
+&trans  &trans            &trans         &trans     &trans                 &kp LA(LG(LEFT_ARROW))  &trans  &trans      &trans  &trans  &kp LA(LG(RIGHT_ARROW))            &trans   &trans           &trans         &trans     &trans
             >;
         };
 
