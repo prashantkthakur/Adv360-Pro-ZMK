@@ -96,11 +96,11 @@
 
         CommandLayer {
             bindings = <
-&trans  &trans            &trans         &trans                 &trans                 &trans  &trans                                                          &trans                   &trans     &trans     &trans       &trans         &trans     &trans
-&trans  &kp LG(Q)         &kp LG(W)      &kp LS(LA(LC(LG(E))))  &kp LG(LC(LA(LS(R))))  &trans  &trans                                                          &trans                   &kp LG(R)  &kp LG(Z)  &trans       &trans         &kp LG(P)  &trans
-&trans  &kp LG(LA(LEFT))  &kp LS(LG(F))  &kp LC(GRAVE)          &trans                 &trans  &trans                  &trans      &trans      &trans  &trans  &trans                   &trans     &switcher  &kp LS(TAB)  &kp LG(GRAVE)  &trans     &trans
-&trans  &trans            &trans         &trans                 &trans                 &trans                                      &trans      &trans                                   &trans     &trans     &trans       &trans         &trans     &trans
-&trans  &trans            &trans         &trans                 &trans                         &kp LA(LG(LEFT_ARROW))  &kp ESCAPE  &trans      &trans  &trans  &kp LA(LG(RIGHT_ARROW))             &trans     &trans       &trans         &trans     &trans
+&trans  &trans            &trans                   &trans                 &trans                 &trans  &trans                                           &trans                   &trans     &trans     &trans       &trans         &trans     &trans
+&trans  &kp LG(Q)         &kp LG(W)                &kp LS(LA(LC(LG(E))))  &kp LG(LC(LA(LS(R))))  &trans  &trans                                           &trans                   &kp LG(R)  &kp LG(Z)  &trans       &trans         &kp LG(P)  &trans
+&trans  &kp LG(LA(LEFT))  &kp LG(LA(RIGHT_ARROW))  &kp LC(GRAVE)          &trans                 &trans  &trans   &trans      &trans      &trans  &trans  &trans                   &trans     &switcher  &kp LS(TAB)  &kp LG(GRAVE)  &trans     &trans
+&trans  &trans            &trans                   &trans                 &trans                 &trans                       &trans      &trans                                   &trans     &trans     &trans       &trans         &trans     &trans
+&trans  &trans            &trans                   &trans                 &trans                         &kp TAB  &kp ESCAPE  &trans      &trans  &trans  &kp LA(LG(RIGHT_ARROW))             &trans     &trans       &trans         &trans     &trans
             >;
         };
 
