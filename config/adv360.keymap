@@ -51,6 +51,24 @@
         };
     };
 
+    macros {
+        app_switcher: new_macro {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&kp LGUI>,
+                <&macro_press>,
+                <&kp TAB>,
+                <&macro_tap>,
+                <&kp LGUI>,
+                <&macro_release>;
+
+            label = "NEW_MACRO";
+            wait-ms = <150>;
+            tap-ms = <50>;
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
@@ -78,11 +96,11 @@
 
         CommandLayer {
             bindings = <
-&trans  &trans            &trans         &trans                 &trans                 &trans  &trans                                                          &trans                   &trans     &trans     &trans           &trans         &trans     &trans
-&trans  &kp LG(Q)         &kp LG(W)      &kp LS(LA(LC(LG(E))))  &kp LG(LC(LA(LS(R))))  &trans  &trans                                                          &trans                   &kp LG(R)  &kp LG(Z)  &trans           &trans         &kp LG(P)  &trans
-&trans  &kp LG(LA(LEFT))  &kp LS(LG(F))  &kp LC(GRAVE)          &trans                 &trans  &trans                  &trans      &trans      &trans  &trans  &trans                   &kt LGUI   &kt TAB    &kp LG(LS(TAB))  &kp LG(GRAVE)  &trans     &trans
-&trans  &trans            &trans         &trans                 &trans                 &trans                                      &trans      &trans                                   &trans     &trans     &trans           &trans         &trans     &trans
-&trans  &trans            &trans         &trans                 &trans                         &kp LA(LG(LEFT_ARROW))  &kp ESCAPE  &trans      &trans  &trans  &kp LA(LG(RIGHT_ARROW))             &trans     &trans           &trans         &trans     &trans
+&trans  &trans            &trans         &trans                 &trans                 &trans  &trans                                                          &trans                   &trans     &trans         &trans       &trans         &trans     &trans
+&trans  &kp LG(Q)         &kp LG(W)      &kp LS(LA(LC(LG(E))))  &kp LG(LC(LA(LS(R))))  &trans  &trans                                                          &trans                   &kp LG(R)  &kp LG(Z)      &trans       &trans         &kp LG(P)  &trans
+&trans  &kp LG(LA(LEFT))  &kp LS(LG(F))  &kp LC(GRAVE)          &trans                 &trans  &trans                  &trans      &trans      &trans  &trans  &trans                   &trans     &app_switcher  &kp LS(TAB)  &kp LG(GRAVE)  &trans     &trans
+&trans  &trans            &trans         &trans                 &trans                 &trans                                      &trans      &trans                                   &trans     &trans         &trans       &trans         &trans     &trans
+&trans  &trans            &trans         &trans                 &trans                         &kp LA(LG(LEFT_ARROW))  &kp ESCAPE  &trans      &trans  &trans  &kp LA(LG(RIGHT_ARROW))             &trans         &trans       &trans         &trans     &trans
             >;
         };
 
