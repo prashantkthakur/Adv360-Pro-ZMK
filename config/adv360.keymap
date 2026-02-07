@@ -22,23 +22,6 @@
 
             quick-tap-ms = <185>;
         };
-
-        tap_dance: tap_dance {
-            compatible = "zmk,behavior-tap-dance";
-            label = "TAP_DANCE";
-            #binding-cells = <0>;
-            bindings = <&to 3>, <&to 1>, <&to 5>, <&to 6>;
-
-            tapping-term-ms = <250>;
-        };
-
-        sticky_cmd_key: sticky_cmd_key {
-            compatible = "zmk,behavior-sticky-key";
-            label = "STICKY_CMD_KEY";
-            bindings = <&kp>;
-            #binding-cells = <1>;
-            release-after-ms = <2000>;
-        };
     };
 
     combos {
@@ -48,24 +31,6 @@
             bindings = <&kp ESCAPE>;
             key-positions = <32 41>;
             layers = <0>;
-        };
-    };
-
-    macros {
-        switcher: switcher {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings =
-                <&macro_press>,
-                <&kp LGUI>,
-                <&macro_tap>,
-                <&kp TAB>,
-                <&macro_tap>,
-                <&kp LGUI>,
-                <&macro_release>,
-                <&kp LGUI>;
-
-            label = "SWITCHER";
         };
     };
 
@@ -99,18 +64,18 @@
 &trans  &trans            &trans                   &trans                 &trans                 &trans  &trans                                                                               &trans                   &trans     &trans              &trans         &trans               &trans     &trans
 &trans  &kp LG(Q)         &kp LG(W)                &kp LS(LA(LC(LG(E))))  &kp LG(LC(LA(LS(R))))  &trans  &trans                                                                               &trans                   &kp LG(R)  &kp LG(Z)           &trans         &trans               &kp LG(P)  &trans
 &trans  &kp LG(LA(LEFT))  &kp LG(LA(RIGHT_ARROW))  &kp LC(GRAVE)          &trans                 &trans  &trans              &trans               &trans      &trans  &trans                  &trans                   &trans     &kp LG(LEFT_ARROW)  &kp LG(GRAVE)  &kp LG(RIGHT_ARROW)  &trans     &trans
-&trans  &trans            &trans                   &trans                 &trans                 &trans                                           &trans      &trans                                                   &trans     &trans              &trans         &trans               &trans     &trans
+&trans  &trans            &kp LG(X)                &trans                 &trans                 &trans                                           &trans      &trans                                                   &trans     &trans              &trans         &trans               &trans     &trans
 &trans  &trans            &trans                   &trans                 &trans                         &kp LA(LEFT_ARROW)  &kp LA(RIGHT_ARROW)  &trans      &trans  &kp LG(LA(LEFT_ARROW))  &kp LG(LA(RIGHT_ARROW))             &trans              &trans         &trans               &trans     &trans
             >;
         };
 
         symbol {
             bindings = <
-&kp GRAVE  &kp EXCLAMATION    &kp AT_SIGN      &kp HASH               &kp DOLLAR     &kp PERCENT       &trans                                                                        &trans   &trans  &trans  &trans     &trans      &trans        &trans
-&trans     &kp AMPERSAND      &kp PLUS         &kp EQUAL              &kp MINUS      &kp UNDERSCORE    &kp ASTERISK                                                                  &trans   &trans  &trans  &trans     &trans      &trans        &trans
-&kp PIPE   &kp LEFT_BRACKET   &kp LEFT_BRACE   &kp LEFT_PARENTHESIS   &kp SEMICOLON  &kp LESS_THAN     &kp CARET     &trans  &trans                    &trans     &trans             &trans   &trans  &trans  &kp COMMA  &kp PERIOD  &kp QUESTION  &trans
-&trans     &kp RIGHT_BRACKET  &kp RIGHT_BRACE  &kp RIGHT_PARENTHESIS  &kp COLON      &kp GREATER_THAN                        &trans                    &trans                                 &trans  &trans  &trans     &trans      &trans        &trans
-&trans     &trans             &trans           &trans                 &trans                           &trans        &trans  &kp NON_US_BACKSLASH      &kp SLASH  &kp DOUBLE_QUOTES  &kp SQT          &trans  &trans     &trans      &trans        &trans
+&kp GRAVE  &kp EXCLAMATION    &kp AT_SIGN      &kp HASH               &kp DOLLAR     &kp PERCENT       &trans                                                                        &trans   &kp CARET  &kp AMPERSAND  &kp ASTERISK  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &trans
+&trans     &kp AMPERSAND      &kp PLUS         &kp EQUAL              &kp MINUS      &kp UNDERSCORE    &kp ASTERISK                                                                  &trans   &trans     &trans         &trans        &trans                &trans                 &trans
+&kp PIPE   &kp LEFT_BRACKET   &kp LEFT_BRACE   &kp LEFT_PARENTHESIS   &kp SEMICOLON  &kp LESS_THAN     &kp CARET     &trans  &trans                    &trans     &trans             &trans   &trans     &trans         &kp COMMA     &kp PERIOD            &kp QUESTION           &trans
+&trans     &kp RIGHT_BRACKET  &kp RIGHT_BRACE  &kp RIGHT_PARENTHESIS  &kp COLON      &kp GREATER_THAN                        &kp NON_US_BACKSLASH      &trans                                 &trans     &trans         &trans        &trans                &trans                 &trans
+&trans     &trans             &trans           &trans                 &trans                           &trans        &trans  &kp GRAVE                 &kp SLASH  &kp DOUBLE_QUOTES  &kp SQT             &trans         &trans        &trans                &trans                 &trans
             >;
         };
 
